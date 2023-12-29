@@ -116,6 +116,8 @@ def get_size(path: Path) -> str:
         str: size in KB
     """
     size_in_kb = round(os.path.getsize(path) / 1024)
+    logger.info(f"The size of file in kb is :{size_in_kb}")
+
     return size_in_kb
 
 

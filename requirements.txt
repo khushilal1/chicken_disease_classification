@@ -13,7 +13,7 @@ ensure
 Flask
 Flask-Cors
 types-pyYAML
-
+config
 -e .
 
 
