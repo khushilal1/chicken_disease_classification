@@ -5,6 +5,7 @@ import tensorflow as tf
 import time
 from cnnClassifier.entity.config_entity import PrepareCallbacksConfig
 
+#for call back
 
 class PrepareCallback:
     def __init__(self, config: PrepareCallbacksConfig):
