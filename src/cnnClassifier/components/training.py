@@ -1,11 +1,6 @@
-
 import tensorflow as tf
-from src.cnnClassifier.entity.config_entity import TrainingConfig
+from cnnClassifier.entity.config_entity import TrainingConfig
 from pathlib import Path
-
-
-
-
 
 
 class Training:
@@ -35,10 +30,6 @@ class Training:
             **dataflow_kwargs
         )
 
-
-
-
-
         if self.config.params_is_augmentation:
             train_datagenerator = tf.keras.preprocessing.image.ImageDataGenerator(
                 rotation_range=40,
@@ -50,16 +41,16 @@ class Training:
                 **datagenerator_kwargs
             )
 
-            #for data generator
+            # for data generator
             self.train_generator = train_datagenerator.flow_from_directory(
-            directory=self.config.training_data,
-            subset="training",
-            shuffle=True,
-            **dataflow_kwargs
-    )
+                directory=self.config.training_data,
+                subset="training",
+                shuffle=True,
+                **dataflow_kwargs
+            )
         else:
             train_datagenerator = valid_datagenerator
-            self.train_generator=train_datagenerator.flow_from_directory(
+            self.train_generator = train_datagenerator.flow_from_directory(
                 directory=self.config.training_data,
                 subset="training",
                 shuffle=True,
@@ -72,7 +63,6 @@ class Training:
 
     def train(self, callback_list: list):
         self.steps_per_epoch = (
-            
             self.train_generator.samples // self.train_generator.batch_size
         )
         self.validation_steps = (

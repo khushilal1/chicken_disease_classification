@@ -26,4 +26,4 @@ class PrepareCallback:
         )
 
     def get_tb_ckpt_callbacks(self):
-        return [self.create_ckpt_callbacks, self.create_tb_callbacks]
+        return ([self.create_ckpt_callbacks, self.create_tb_callbacks])

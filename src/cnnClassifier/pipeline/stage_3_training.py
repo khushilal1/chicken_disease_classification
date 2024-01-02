@@ -5,10 +5,6 @@ from cnnClassifier import logger
 
 
 
-
-
-
-
 #pipeline
 STAGE_NAME = "Training"
 

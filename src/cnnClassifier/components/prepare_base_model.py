@@ -4,8 +4,9 @@ from zipfile import ZipFile
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.models import Model  # Add this import
-from src.cnnClassifier.entity.config_entity import PrepareBaseModelConfig
+from cnnClassifier.entity.config_entity import PrepareBaseModelConfig
 from pathlib import Path
+
 
 class PrepareBaseModel:
     def __init__(self, config: PrepareBaseModelConfig):
